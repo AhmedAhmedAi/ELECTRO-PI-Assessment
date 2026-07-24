@@ -1,0 +1,122 @@
+{
+  "label": "native_np6",
+  "concurrency": 10,
+  "wall_seconds": 11.3,
+  "ttft_ms": {
+    "min": 173,
+    "median": 1025,
+    "p90": 3320,
+    "max": 4599
+  },
+  "total_ms": {
+    "min": 1228,
+    "median": 5188,
+    "max": 11304
+  },
+  "model_ttft_ms": {
+    "median": 1019
+  },
+  "aggregate_tokens_per_s": 34.6,
+  "health": {
+    "status": "ok",
+    "backend": "server",
+    "model": "Qwen3.5-4B-Q4_K_M.gguf",
+    "n_ctx": 4096,
+    "gpu_layers": -1,
+    "load_seconds": 0.0,
+    "requests_served": 33,
+    "slots": 4
+  },
+  "requests": [
+    {
+      "request": 0,
+      "client_ttft_ms": 173,
+      "client_total_ms": 7108,
+      "queue_ms": 0,
+      "model_ttft_ms": 171,
+      "tokens": 51,
+      "gen_tokens_per_s": 7.2
+    },
+    {
+      "request": 1,
+      "client_ttft_ms": 1025,
+      "client_total_ms": 2879,
+      "queue_ms": 0,
+      "model_ttft_ms": 1020,
+      "tokens": 14,
+      "gen_tokens_per_s": 4.9
+    },
+    {
+      "request": 2,
+      "client_ttft_ms": 1025,
+      "client_total_ms": 1228,
+      "queue_ms": 0,
+      "model_ttft_ms": 1018,
+      "tokens": 2,
+      "gen_tokens_per_s": 1.6
+    },
+    {
+      "request": 3,
+      "client_ttft_ms": 4599,
+      "client_total_ms": 11304,
+      "queue_ms": 0,
+      "model_ttft_ms": 4592,
+      "tokens": 96,
+      "gen_tokens_per_s": 8.5
+    },
+    {
+      "request": 4,
+      "client_ttft_ms": 1795,
+      "client_total_ms": 6246,
+      "queue_ms": 0,
+      "model_ttft_ms": 1788,
+      "tokens": 36,
+      "gen_tokens_per_s": 5.8
+    },
+    {
+      "request": 5,
+      "client_ttft_ms": 1024,
+      "client_total_ms": 1480,
+      "queue_ms": 0,
+      "model_ttft_ms": 1017,
+      "tokens": 3,
+      "gen_tokens_per_s": 2.0
+    },
+    {
+      "request": 6,
+      "client_ttft_ms": 1023,
+      "client_total_ms": 10022,
+      "queue_ms": 0,
+      "model_ttft_ms": 1016,
+      "tokens": 87,
+      "gen_tokens_per_s": 8.7
+    },
+    {
+      "request": 7,
+      "client_ttft_ms": 1969,
+      "client_total_ms": 4130,
+      "queue_ms": 0,
+      "model_ttft_ms": 1961,
+      "tokens": 19,
+      "gen_tokens_per_s": 4.6
+    },
+    {
+      "request": 8,
+      "client_ttft_ms": 1024,
+      "client_total_ms": 4130,
+      "queue_ms": 0,
+      "model_ttft_ms": 1016,
+      "tokens": 24,
+      "gen_tokens_per_s": 5.8
+    },
+    {
+      "request": 9,
+      "client_ttft_ms": 3320,
+      "client_total_ms": 9389,
+      "queue_ms": 0,
+      "model_ttft_ms": 3312,
+      "tokens": 59,
+      "gen_tokens_per_s": 6.3
+    }
+  ]
+}

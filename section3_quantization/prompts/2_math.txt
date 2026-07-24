@@ -1,0 +1,1 @@
+A restaurant sells burgers for 85 EGP each. On Tuesday it sold 47 burgers, and on Wednesday it sold 12 fewer than on Tuesday. It also pays a fixed 900 EGP per day in rider costs. What was the total profit contribution (revenue minus rider costs) across both days? Show your steps briefly, then give the final number.

@@ -1,0 +1,35 @@
+# llama-server compiled IN the container with native CPU optimizations.
+# The official ghcr.io arm64 image is a portable build (no dotprod/i8mm
+# kernels) and benchmarked ~5x slower here — compiling for the actual CPU
+# is what makes CPU serving viable. Measured, not assumed.
+FROM debian:bookworm-slim AS build
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential cmake git ca-certificates libcurl4-openssl-dev \
+    && rm -rf /var/lib/apt/lists/*
+# Pinned release (moves ~daily on master; pin = the build tested here).
+RUN git clone --depth 1 --branch b10087 https://github.com/ggml-org/llama.cpp /src
+# Pin CPU features explicitly instead of GGML_NATIVE runtime probing — the
+# probes are flaky inside VMs and a failed probe silently produces a slow
+# (or broken) build. Default targets Apple M-series / Graviton3+; on older
+# arm64 (Graviton2, Raspberry Pi — no i8mm) override, e.g.:
+#   docker build --build-arg ARM_ARCH=armv8.2-a+dotprod+fp16 ...
+ARG TARGETARCH
+ARG ARM_ARCH=armv8.2-a+dotprod+fp16+i8mm
+RUN if [ "$TARGETARCH" = "arm64" ]; then \
+        ARCH_FLAGS="-DGGML_NATIVE=OFF -DGGML_CPU_ARM_ARCH=$ARM_ARCH"; \
+    else \
+        ARCH_FLAGS="-DGGML_NATIVE=ON"; \
+    fi \
+    && cmake -S /src -B /build -DCMAKE_BUILD_TYPE=Release \
+        $ARCH_FLAGS -DBUILD_SHARED_LIBS=OFF \
+    && cmake --build /build --target llama-server -j 4
+    # -j 4, not unbounded: a full-width C++ compile can OOM the Docker VM.
+
+FROM debian:bookworm-slim
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libcurl4 libgomp1 && rm -rf /var/lib/apt/lists/* \
+    && useradd --create-home appuser
+COPY --from=build /build/bin/llama-server /usr/local/bin/llama-server
+USER appuser
+EXPOSE 8080
+ENTRYPOINT ["llama-server"]

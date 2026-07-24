@@ -1,0 +1,35 @@
+
+
+Loading model... |-\|/-\|/-\|/-\|/-\|/-\|/- 
+
+▄▄ ▄▄
+██ ██
+██ ██  ▀▀█▄ ███▄███▄  ▀▀█▄    ▄████ ████▄ ████▄
+██ ██ ▄█▀██ ██ ██ ██ ▄█▀██    ██    ██ ██ ██ ██
+██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀
+                                    ██    ██
+                                    ▀▀    ▀▀
+
+build      : b10050-b15ca938a
+model      : models/Qwen3.5-4B-Q4_K_M.gguf
+ftype      : Q4_K - Medium
+modalities : text
+
+available commands:
+  /exit or Ctrl+C     stop or exit
+  /regen              regenerate the last response
+  /clear              clear the chat history
+  /read <file>        add a text file
+  /glob <pattern>     add text files using globbing pattern
+
+
+
+> اكتب رد قصير (٣ جمل بالظبط) باللهجة المصرية لعميل زعلان لأن أوردر الأكل بتاعه اتأخر ٤٥ دقيقة، واعرض عليه خصم ١٠٪ على الطلب الجاي.
+يا عمي أنا عايز أعتذر منك بشدة لأن تأخير الأكل بيومينك ده حقك ولا نزلنا عندها.
+عشان نكفك عندها ونسوي الأمور، خصمنا عليك ١٠٪ على الطلب الجاي مباشرة.
+تفضل تأكل بسلام ونرجو منك العفو عنا في المرة دي.
+
+[ Prompt: 433.9 t/s | Generation: 37.9 t/s ]
+
+
+Exiting...

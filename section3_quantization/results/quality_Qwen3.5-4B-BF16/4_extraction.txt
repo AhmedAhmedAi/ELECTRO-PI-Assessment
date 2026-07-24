@@ -1,0 +1,35 @@
+
+
+Loading model... |-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/- 
+
+▄▄ ▄▄
+██ ██
+██ ██  ▀▀█▄ ███▄███▄  ▀▀█▄    ▄████ ████▄ ████▄
+██ ██ ▄█▀██ ██ ██ ██ ▄█▀██    ██    ██ ██ ██ ██
+██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀
+                                    ██    ██
+                                    ▀▀    ▀▀
+
+build      : b10050-b15ca938a
+model      : models/Qwen3.5-4B-BF16.gguf
+ftype      : BF16
+modalities : text
+
+available commands:
+  /exit or Ctrl+C     stop or exit
+  /regen              regenerate the last response
+  /clear              clear the chat history
+  /read <file>        add a text file
+  /glob <pattern>     add text files using globbing pattern
+
+
+
+> Extract the order into JSON with keys customer, order_id, items (list of {name, qty}), total_egp. Reply with ONLY the JSON.
+
+"Hi this is Mariam, order BB-2087. I had two beef burgers, one fries and three cokes, it came to 412 Egyptian pounds."
+{"customer": "Mariam", "order_id": "BB-2087", "items": [{"name": "beef burgers", "qty": 2}, {"name": "fries", "qty": 1}, {"name": "cokes", "qty": 3}], "total_egp": 412}
+
+[ Prompt: 359.2 t/s | Generation: 14.8 t/s ]
+
+
+Exiting...

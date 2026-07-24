@@ -1,0 +1,558 @@
+[
+  {
+    "question": "When was ElectroPi founded, and how many enterprise clients does it serve?",
+    "answer": "ElectroPi was founded in 2016 and serves over 130 enterprise clients [1].",
+    "citations": [
+      {
+        "n": 1,
+        "title": "Our Story & Mission | About ElectroPi",
+        "heading": "Built by engineers, for engineers.",
+        "url": "https://electropi.ai/about"
+      }
+    ],
+    "refused": false,
+    "cache_mode": "explicit-cache",
+    "cached_tokens": 1138,
+    "contexts": [
+      {
+        "n": 1,
+        "heading": "Built by engineers, for engineers.",
+        "title": "Our Story & Mission | About ElectroPi",
+        "url": "https://electropi.ai/about",
+        "text": "ElectroPi was founded in 2016 by a team of AI researchers and software engineers who saw the gap between cutting-edge AI research and practical business applications.\nWhat started as a small consulting practice has grown into a comprehensive AI engineering company, serving over 130 enterprise clients across industries.\nToday, we're not just building AI systems — we're building the future of intelligent automation, one solution at a time.\n8+\nYears of Excellence\n130+\nEnterprise Clients\n7.5K+\nDevelopment Hours\n99.9%\nSystem Uptime",
+        "relevance": 10
+      },
+      {
+        "n": 2,
+        "heading": "Built for Enterprise Scale",
+        "title": "AI Engineering Services for Enterprise | ElectroPi",
+        "url": "https://electropi.ai/",
+        "text": "Why leading organizations choose ElectroPi for AI engineering.\n130+\nProjects\n8+\nYears\n99.9%\nUptime\nTrusted by 130+ enterprise clients across industries worldwide.\n01",
+        "relevance": 7
+      },
+      {
+        "n": 3,
+        "heading": "Precision AI Engineering for Enterprise.",
+        "title": "AI Engineering Services for Enterprise | ElectroPi",
+        "url": "https://electropi.ai/",
+        "text": "Production-ready AI systems that deliver measurable results. From intelligent automation to custom ML deployments — built for scale.\n130+\nEnterprise Clients\n7.5K+\nDevelopment Hours\n8+\nYears Experience\nAccuracy\n98.7%\npipeline.py\noutput.json\nrunning\nfrom\nelectropi\nimport\nPipeline\npipeline\n=\nPipeline\n(\nmodel\n=\n\"ep-accuracy-v3\"\n)\nresult\n=\npipeline\n.\nrun\n(\ndocuments\n)\n→ output\n✓ 847 documents processed\n· accuracy: 98.7%\n· latency: 45ms avg\n· status: complete\npipeline · production\nv3.4.1\nOur Solutions",
+        "relevance": 7
+      },
+      {
+        "n": 4,
+        "heading": "Engineering AI Solutions For the Future",
+        "title": "Our Story & Mission | About ElectroPi",
+        "url": "https://electropi.ai/about",
+        "text": "Founded on the belief that AI should empower businesses, ElectroPi transforms complex challenges into intelligent, scalable solutions.\nOur Story",
+        "relevance": 5
+      }
+    ],
+    "cache_hit": false,
+    "diagnostics": {
+      "best_cosine": 0.846,
+      "query_variants": [
+        "When was ElectroPi founded, and how many enterprise clients does it serve?",
+        "What is the founding date of ElectroPi and what is the total count of its business customers?",
+        "When did ElectroPi start operations and how many corporate clients does it have?"
+      ],
+      "rerank": [
+        {
+          "id": "about#1.0",
+          "relevance": 10,
+          "heading": "Built by engineers, for engineers.",
+          "preview": "Our Story & Mission | About ElectroPi | Built by engineers, for engineers.\nElectroPi was founded in 2016 by a team of AI researchers and software engineers who saw the gap between cutting-edge AI rese"
+        },
+        {
+          "id": "home#12.0",
+          "relevance": 7,
+          "heading": "Built for Enterprise Scale",
+          "preview": "AI Engineering Services for Enterprise | ElectroPi | Built for Enterprise Scale\nWhy leading organizations choose ElectroPi for AI engineering.\n130+\nProjects\n8+\nYears\n99.9%\nUptime\nTrusted by 130+ enter"
+        },
+        {
+          "id": "home#0.0",
+          "relevance": 7,
+          "heading": "Precision AI Engineering for Enterprise.",
+          "preview": "AI Engineering Services for Enterprise | ElectroPi | Precision AI Engineering for Enterprise.\nProduction-ready AI systems that deliver measurable results. From intelligent automation to custom ML depl"
+        },
+        {
+          "id": "about#0.0",
+          "relevance": 5,
+          "heading": "Engineering AI Solutions For the Future",
+          "preview": "Our Story & Mission | About ElectroPi | Engineering AI Solutions For the Future\nFounded on the belief that AI should empower businesses, ElectroPi transforms complex challenges into intelligent, scala"
+        },
+        {
+          "id": "blog_voice-ai-solutions#19.0",
+          "relevance": 5,
+          "heading": "Proven at scale",
+          "preview": "Enterprise Voice AI Solutions in Arabic & English | ElectroPi | Proven at scale\nElectroPi voice AI deployments across MENA have reached production scale across multiple industries.\n500+ enterprise age"
+        },
+        {
+          "id": "solutions#0.0",
+          "relevance": 0,
+          "heading": "Business-Ready AI Solutions",
+          "preview": "Enterprise AI Solutions for Business | ElectroPi | Business-Ready AI Solutions\nProven AI platforms designed to solve real business challenges across industries."
+        },
+        {
+          "id": "about#11.0",
+          "relevance": 0,
+          "heading": "Ready to build the future together?",
+          "preview": "Our Story & Mission | About ElectroPi | Ready to build the future together?\nLet's discuss how ElectroPi can help transform your business with intelligent AI solutions."
+        },
+        {
+          "id": "blog_ai-chatbots-for-enterprise#3.0",
+          "relevance": 0,
+          "heading": "How They Work — NLU & Intent Classification",
+          "preview": "AI Chatbots for Enterprise: The 2026 Guide | ElectroPi | How They Work — NLU & Intent Classification\nNatural Language Understanding converts a user's message into structured meaning: intent classifica"
+        },
+        {
+          "id": "about#5.0",
+          "relevance": 0,
+          "heading": "What drives us forward — Client Success",
+          "preview": "Our Story & Mission | About ElectroPi | What drives us forward — Client Success\nYour business goals are our metrics. We measure success by the impact we deliver."
+        },
+        {
+          "id": "home#25.0",
+          "relevance": 0,
+          "heading": "Let's Build Intelligent AI Systems Together",
+          "preview": "AI Engineering Services for Enterprise | ElectroPi | Let's Build Intelligent AI Systems Together\nPartner with ElectroPi to create scalable AI solutions and enterprise technologies that drive real busi"
+        }
+      ]
+    },
+    "seconds": 3.48
+  },
+  {
+    "question": "Why is Arabic voice AI particularly hard to build?",
+    "answer": "Building Arabic voice AI is uniquely difficult for several reasons:\n\n* **Dialect mixing and regional variations:** Systems must handle Egyptian Arabic, Saudi dialects (such as Najdi and Hejazi), Gulf and Levantine dialects, and Modern Standard Arabic (MSA)—often mixing dialects or MSA in the same call [1][2].\n* **Code-switching:** Callers frequently switch between Arabic and English mid-sentence [1][2].\n* **Noisy environments:** Callers speak from mobile networks, cars, cafes, and streets, which causes off-the-shelf ASR (Automatic Speech Recognition) to degrade quickly [1].\n* **Named entities:** Base models frequently mistranscribe local company names, personal names, place names, and Arabic names generally [1][2].\n* **Latency budget and morphology:** Arabic morphology increases token counts, making every millisecond critical [1].\n* **Off-the-shelf limitations:** Models trained on Western datasets stumble on real MENA traffic and generic global vendors frequently fail on these localization requirements [1][2].",
+    "citations": [
+      {
+        "n": 1,
+        "title": "Enterprise Voice AI Solutions in Arabic & English | ElectroPi",
+        "heading": "Why Arabic voice AI is uniquely hard",
+        "url": "https://electropi.ai/blog/voice-ai-solutions"
+      },
+      {
+        "n": 2,
+        "title": "Voice AI Agent for Customer Service | ElectroPi",
+        "heading": "Why Arabic Voice AI Matters for Customer Service",
+        "url": "https://electropi.ai/blog/voice-ai-agent-for-customer-service"
+      }
+    ],
+    "refused": false,
+    "cache_mode": "explicit-cache",
+    "cached_tokens": 1138,
+    "contexts": [
+      {
+        "n": 1,
+        "heading": "Why Arabic voice AI is uniquely hard",
+        "title": "Enterprise Voice AI Solutions in Arabic & English | ElectroPi",
+        "url": "https://electropi.ai/blog/voice-ai-solutions",
+        "text": "Building an AI voice assistant that truly serves Arabic-speaking customers is significantly harder than English. Off-the-shelf models trained on Western datasets stumble on real MENA traffic. Getting it right requires more than technology — it takes native language expertise, regional data, and a team that hears mistakes the way your customers hear them.\nElectroPi develops multilingual agents that natively support Arabic dialects, English, and virtually any language an enterprise requires — trained on domain data, tuned for local accents, and integrated with your systems. Our teams train, test, and iterate on real regional traffic, then measure quality in production, not in benchmark suites.\nDialect mixing: Egyptian Arabic, Saudi dialects, and MSA — often in the same call.\nCode-switching: Callers switch between Arabic and English mid-sentence.\nNoisy environments: Mobile networks, cars, cafes, streets. Off-the-shelf ASR degrades fast.\nNamed entities: Local company names, personal names, and place names that base models mistranscribe.\nLatency budget: Arabic morphology increases token counts — every millisecond matters.",
+        "relevance": 10
+      },
+      {
+        "n": 2,
+        "heading": "Why Arabic Voice AI Matters for Customer Service",
+        "title": "Voice AI Agent for Customer Service | ElectroPi",
+        "url": "https://electropi.ai/blog/voice-ai-agent-for-customer-service",
+        "text": "Arabic voice AI is the most important localization requirement for MENA contact centers — and where generic global vendors most often fail. Production systems must handle:\nEgyptian Arabic — vocabulary and colloquialisms\nSaudi Arabic — Najdi, Hejazi, regional variants\nModern Standard Arabic — formal and government contexts\nGulf and Levantine dialects — cross-border operations\nCode Switching — Arabic-English mid-sentence\nAccent Adaptation , background noise, and low latency\nArabic Names Recognition — often mishandled by off-the-shelf ASR\nElectroPi develops multilingual AI voice agents fine-tuned on Arabic dialect data and validated in production across Egypt, Saudi Arabia, and the GCC — with English and additional languages supported by the same stack. Explore the full stack on our voice AI solutions page.",
+        "relevance": 10
+      },
+      {
+        "n": 3,
+        "heading": "What is Voice AI?",
+        "title": "Enterprise Voice AI Solutions in Arabic & English | ElectroPi",
+        "url": "https://electropi.ai/blog/voice-ai-solutions",
+        "text": "Voice AI is a class of artificial intelligence that enables machines to understand spoken language, reason about it, and respond in natural, human-like speech. It combines Automatic Speech Recognition (ASR), Natural Language Processing, Large Language Models, and Text-to-Speech (TTS) into a single real-time conversational loop.\nUnlike traditional IVR, which relies on button presses and rigid keyword matching, modern voice AI understands free-form speech, handles interruptions, remembers context across a conversation, and connects directly to enterprise systems such as CRM, ERP, and knowledge bases.",
+        "relevance": 5
+      },
+      {
+        "n": 4,
+        "heading": "Introduction",
+        "title": "Enterprise Voice AI Solutions in Arabic & English | ElectroPi",
+        "url": "https://electropi.ai/blog/voice-ai-solutions",
+        "text": "Enterprise customer service is being redefined by speech technology. Long wait times, rigid menus, and overloaded contact centers are pushing organizations across Egypt, Saudi Arabia, and the GCC toward intelligent, spoken automation that understands intent, context, and dialect. For CTOs, CIOs, and contact center leaders, the question is no longer whether to adopt voice AI — it is how to deploy it responsibly at enterprise scale.\nAt ElectroPi, we design and deliver enterprise-grade systems for telecom, banking, government, healthcare, insurance, logistics, retail, and real estate. This guide explains how the technology works, why Arabic support is uniquely demanding, and how to evaluate the right platform for your organization.",
+        "relevance": 5
+      }
+    ],
+    "cache_hit": false,
+    "diagnostics": {
+      "best_cosine": 0.85,
+      "query_variants": [
+        "Why is Arabic voice AI particularly hard to build?",
+        "What makes developing Arabic speech recognition and voice assistants so difficult?",
+        "Challenges in creating voice-activated artificial intelligence for the Arabic language"
+      ],
+      "rerank": [
+        {
+          "id": "blog_voice-ai-solutions#11.0",
+          "relevance": 10,
+          "heading": "Why Arabic voice AI is uniquely hard",
+          "preview": "Enterprise Voice AI Solutions in Arabic & English | ElectroPi | Why Arabic voice AI is uniquely hard\nBuilding an AI voice assistant that truly serves Arabic-speaking customers is significantly harder "
+        },
+        {
+          "id": "blog_voice-ai-agent-for-customer-service#10.0",
+          "relevance": 10,
+          "heading": "Why Arabic Voice AI Matters for Customer Service",
+          "preview": "Voice AI Agent for Customer Service | ElectroPi | Why Arabic Voice AI Matters for Customer Service\nArabic voice AI is the most important localization requirement for MENA contact centers — and where g"
+        },
+        {
+          "id": "blog_voice-ai-solutions#1.0",
+          "relevance": 5,
+          "heading": "What is Voice AI?",
+          "preview": "Enterprise Voice AI Solutions in Arabic & English | ElectroPi | What is Voice AI?\nVoice AI is a class of artificial intelligence that enables machines to understand spoken language, reason about it, a"
+        },
+        {
+          "id": "blog_voice-ai-solutions#0.0",
+          "relevance": 5,
+          "heading": "Introduction",
+          "preview": "Enterprise Voice AI Solutions in Arabic & English | ElectroPi | Introduction\nEnterprise customer service is being redefined by speech technology. Long wait times, rigid menus, and overloaded contact c"
+        },
+        {
+          "id": "blog_voice-ai-agent-for-customer-service#15.0",
+          "relevance": 5,
+          "heading": "Why Egypt and Saudi Arabia Are Investing in AI Voice Agents",
+          "preview": "Voice AI Agent for Customer Service | ElectroPi | Why Egypt and Saudi Arabia Are Investing in AI Voice Agents\nEnterprises across Egypt and Saudi Arabia are investing in enterprise voice AI for a speci"
+        },
+        {
+          "id": "blog_voice-ai-solutions#3.0",
+          "relevance": 5,
+          "heading": "How voice AI works, end to end — Speech Recognition",
+          "preview": "Enterprise Voice AI Solutions in Arabic & English | ElectroPi | How voice AI works, end to end — Speech Recognition\nConverts the caller's audio into text using acoustic models tuned to the target dial"
+        },
+        {
+          "id": "blog_voice-ai-solutions#9.0",
+          "relevance": 5,
+          "heading": "Eight components of production-grade voice AI",
+          "preview": "Enterprise Voice AI Solutions in Arabic & English | ElectroPi | Eight components of production-grade voice AI\nRobust enterprise voice AI is more than ASR plus TTS. Production systems require a full st"
+        },
+        {
+          "id": "blog_ocr-technology-enterprise-automation#6.0",
+          "relevance": 0,
+          "heading": "Arabic OCR: The MENA-Specific Challenge",
+          "preview": "OCR Technology: How Optical Character Recognition Powers Enterprise Automation | ElectroPi | Arabic OCR: The MENA-Specific Challenge\nOptical character recognition for Arabic is harder than for Latin s"
+        },
+        {
+          "id": "blog_voice-ai-solutions#13.0",
+          "relevance": 0,
+          "heading": "Case Study: MENA telecom",
+          "preview": "Enterprise Voice AI Solutions in Arabic & English | ElectroPi | Case Study: MENA telecom\nChallenge:\nA regional telecom operator needed to modernize its Arabic-language contact center as inbound call v"
+        },
+        {
+          "id": "blog_voice-ai-agent-for-customer-service#18.0",
+          "relevance": 0,
+          "heading": "Future of AI Call Centers",
+          "preview": "Voice AI Agent for Customer Service | ElectroPi | Future of AI Call Centers\nThree shifts will define enterprise deployments over the next 24 months:\nFully agentic voice AI — multi-step workflows execu"
+        }
+      ]
+    },
+    "seconds": 3.99
+  },
+  {
+    "question": "What results did ElectroPi's e-commerce case study achieve?",
+    "answer": "ElectroPi's regional e-commerce retailer case study achieved the following business results:\n* 68% deflection of WhatsApp tickets in the first 60 days [1].\n* Response time cut from 3 hours to under 8 seconds for automated flows [1].\n* CSAT rose from 68% to 89% [1].\n* ROI achieved in under 5 months [1].",
+    "citations": [
+      {
+        "n": 1,
+        "title": "AI Chatbots for Enterprise: The 2026 Guide | ElectroPi",
+        "heading": "Case Study: Regional E-Commerce Retailer — Business Results",
+        "url": "https://electropi.ai/blog/ai-chatbots-for-enterprise"
+      }
+    ],
+    "refused": false,
+    "cache_mode": "explicit-cache",
+    "cached_tokens": 1138,
+    "contexts": [
+      {
+        "n": 1,
+        "heading": "Case Study: Regional E-Commerce Retailer — Business Results",
+        "title": "AI Chatbots for Enterprise: The 2026 Guide | ElectroPi",
+        "url": "https://electropi.ai/blog/ai-chatbots-for-enterprise",
+        "text": "68% deflection of WhatsApp tickets in the first 60 days\nResponse time cut from 3 hours to under 8 seconds for automated flows\nCSAT rose from 68% to 89%\nROI achieved in under 5 months",
+        "relevance": 10
+      },
+      {
+        "n": 2,
+        "heading": "Case Study: Regional E-Commerce Retailer",
+        "title": "AI Chatbots for Enterprise: The 2026 Guide | ElectroPi",
+        "url": "https://electropi.ai/blog/ai-chatbots-for-enterprise",
+        "text": "Challenge:\nA MENA e-commerce retailer received 40,000 WhatsApp messages per week. Agents were overwhelmed, response time hit 3 hours, and CSAT slipped below 70%.\nSolution:\nElectroPi built a bilingual assistant on WhatsApp Business API with RAG over the product catalog, order APIs, and returns policy — plus warm handoff to Zendesk.",
+        "relevance": 5
+      },
+      {
+        "n": 3,
+        "heading": "Case Study: Regional E-Commerce Retailer — Lessons Learned",
+        "title": "AI Chatbots for Enterprise: The 2026 Guide | ElectroPi",
+        "url": "https://electropi.ai/blog/ai-chatbots-for-enterprise",
+        "text": "Guardrails, evaluation sets, and Arabic dialect coverage separated demo from production. Observability paid back within the first quarter.\nWithin two months, our WhatsApp assistant became our largest — and cheapest — customer service channel. ElectroPi ran it like a real product, not a POC. — Head of Customer Experience, anonymized client",
+        "relevance": 5
+      }
+    ],
+    "cache_hit": false,
+    "diagnostics": {
+      "best_cosine": 0.796,
+      "query_variants": [
+        "What results did ElectroPi's e-commerce case study achieve?",
+        "What were the outcomes of the ElectroPi online retail case study?",
+        "What performance metrics and successes did ElectroPi report in their e-commerce case study?"
+      ],
+      "rerank": [
+        {
+          "id": "blog_ai-chatbots-for-enterprise#16.0",
+          "relevance": 10,
+          "heading": "Case Study: Regional E-Commerce Retailer — Business Results",
+          "preview": "AI Chatbots for Enterprise: The 2026 Guide | ElectroPi | Case Study: Regional E-Commerce Retailer — Business Results\n68% deflection of WhatsApp tickets in the first 60 days\nResponse time cut from 3 ho"
+        },
+        {
+          "id": "blog_ai-chatbots-for-enterprise#13.0",
+          "relevance": 5,
+          "heading": "Case Study: Regional E-Commerce Retailer",
+          "preview": "AI Chatbots for Enterprise: The 2026 Guide | ElectroPi | Case Study: Regional E-Commerce Retailer\nChallenge:\nA MENA e-commerce retailer received 40,000 WhatsApp messages per week. Agents were overwhel"
+        },
+        {
+          "id": "blog_ai-chatbots-for-enterprise#17.0",
+          "relevance": 5,
+          "heading": "Case Study: Regional E-Commerce Retailer — Lessons Learned",
+          "preview": "AI Chatbots for Enterprise: The 2026 Guide | ElectroPi | Case Study: Regional E-Commerce Retailer — Lessons Learned\nGuardrails, evaluation sets, and Arabic dialect coverage separated demo from product"
+        },
+        {
+          "id": "blog_ai-chatbots-for-enterprise#14.0",
+          "relevance": 2,
+          "heading": "Case Study: Regional E-Commerce Retailer — Implementation",
+          "preview": "AI Chatbots for Enterprise: The 2026 Guide | ElectroPi | Case Study: Regional E-Commerce Retailer — Implementation\nSix-week rollout: two weeks discovery and prompt design, two weeks RAG and integratio"
+        },
+        {
+          "id": "blog_voice-ai-solutions#15.0",
+          "relevance": 0,
+          "heading": "Case Study: MENA telecom — Business Results",
+          "preview": "Enterprise Voice AI Solutions in Arabic & English | ElectroPi | Case Study: MENA telecom — Business Results\n42% reduction in average handle time\n31% increase in first-call resolution\n38% reduction in "
+        },
+        {
+          "id": "about#8.0",
+          "relevance": 0,
+          "heading": "What drives us forward — Results Driven",
+          "preview": "Our Story & Mission | About ElectroPi | What drives us forward — Results Driven\nEvery project is measured by real business outcomes, not just technical achievements."
+        },
+        {
+          "id": "blog_voice-ai-solutions#16.0",
+          "relevance": 0,
+          "heading": "What our clients measure",
+          "preview": "Enterprise Voice AI Solutions in Arabic & English | ElectroPi | What our clients measure\nThe business case for automation isn't abstract. Across the deployments we've delivered, a small set of outcome"
+        },
+        {
+          "id": "case-studies#2.0",
+          "relevance": 0,
+          "heading": "Predictive Analytics & Demand Forecasting",
+          "preview": "AI Case Studies & Success Stories | ElectroPi | Predictive Analytics & Demand Forecasting\nGlobal Retail Platform\nChallenge:\nInefficient inventory management leading to stockouts and excess inventory c"
+        },
+        {
+          "id": "blog_voice-ai-solutions#14.0",
+          "relevance": 0,
+          "heading": "Case Study: MENA telecom — Context",
+          "preview": "Enterprise Voice AI Solutions in Arabic & English | ElectroPi | Case Study: MENA telecom — Context\nTo make the impact concrete, here is what one large regional operator recorded after a phased rollout"
+        },
+        {
+          "id": "blog_voice-ai-agent-for-customer-service#14.0",
+          "relevance": 0,
+          "heading": "Case Study: Regional Healthcare Network — Business Results (6 months)",
+          "preview": "Voice AI Agent for Customer Service | ElectroPi | Case Study: Regional Healthcare Network — Business Results (6 months)\n+42% CSAT (61 → 87)\n80% call automation\nUnder 5 seconds AI wait time\n100% QA cov"
+        }
+      ]
+    },
+    "seconds": 3.74
+  },
+  {
+    "question": "How much does ElectroPi charge for a chatbot project?",
+    "answer": "Enterprise chatbot projects typically cost fifteen thousand to one hundred fifty thousand dollars, depending on integrations, languages, channels, and model tuning [1].",
+    "citations": [
+      {
+        "n": 1,
+        "title": "AI Chatbots for Enterprise: The 2026 Guide | ElectroPi",
+        "heading": "Frequently Asked Questions",
+        "url": "https://electropi.ai/blog/ai-chatbots-for-enterprise"
+      }
+    ],
+    "refused": false,
+    "cache_mode": "explicit-cache",
+    "cached_tokens": 1138,
+    "contexts": [
+      {
+        "n": 1,
+        "heading": "Frequently Asked Questions",
+        "title": "AI Chatbots for Enterprise: The 2026 Guide | ElectroPi",
+        "url": "https://electropi.ai/blog/ai-chatbots-for-enterprise",
+        "text": "A production-grade conversational assistant powered by LLMs, integrated with company systems, that automates customer support, sales, and internal workflows securely.\nEnterprise projects typically cost fifteen thousand to one hundred fifty thousand dollars, depending on integrations, languages, channels, and model tuning.\nThe right choice depends on your data, channels, and workflows. ElectroPi builds custom solutions using OpenAI, Anthropic Claude, or Rasa.\nYes. They integrate with Salesforce, HubSpot, Zoho, SAP, Odoo, and Microsoft Dynamics through secure APIs and webhook connectors.\nYes. They deploy on WhatsApp Business API for support, order tracking, appointment booking, and outbound notifications in Arabic and English.\nProduction-ready deployment usually takes six to twelve weeks from discovery and design through integration, testing, and live launch.",
+        "relevance": 10
+      },
+      {
+        "n": 2,
+        "heading": "Ready to start your AI project?",
+        "title": "AI Engineering & Development Services | ElectroPi",
+        "url": "https://electropi.ai/services",
+        "text": "Let's discuss how our services can transform your business with intelligent solutions.",
+        "relevance": 5
+      },
+      {
+        "n": 3,
+        "heading": "Why Businesses in Egypt and Saudi Arabia Are Investing in AI Chatbots",
+        "title": "AI Chatbots for Enterprise: The 2026 Guide | ElectroPi",
+        "url": "https://electropi.ai/blog/ai-chatbots-for-enterprise",
+        "text": "Vision 2030 in Saudi Arabia and Egypt's Digital Strategy 2030 are pushing enterprises toward automation, AI-native customer experience, and Arabic-first digital services. High WhatsApp penetration, growing e-commerce, and pressure on support margins make AI chatbots one of the highest-ROI investments in the region. ElectroPi delivers Arabic-first solutions tuned for Gulf and Egyptian dialects, hosted with data-residency options that meet local compliance requirements.",
+        "relevance": 5
+      }
+    ],
+    "cache_hit": false,
+    "diagnostics": {
+      "best_cosine": 0.818,
+      "query_variants": [
+        "How much does ElectroPi charge for a chatbot project?",
+        "What is the pricing for a chatbot development project with ElectroPi?",
+        "How much does it cost to build a chatbot using ElectroPi services?"
+      ],
+      "rerank": [
+        {
+          "id": "blog_ai-chatbots-for-enterprise#23.0",
+          "relevance": 10,
+          "heading": "Frequently Asked Questions",
+          "preview": "AI Chatbots for Enterprise: The 2026 Guide | ElectroPi | Frequently Asked Questions\nA production-grade conversational assistant powered by LLMs, integrated with company systems, that automates custome"
+        },
+        {
+          "id": "services#11.0",
+          "relevance": 5,
+          "heading": "Ready to start your AI project?",
+          "preview": "AI Engineering & Development Services | ElectroPi | Ready to start your AI project?\nLet's discuss how our services can transform your business with intelligent solutions."
+        },
+        {
+          "id": "blog_ai-chatbots-for-enterprise#11.0",
+          "relevance": 5,
+          "heading": "Why Businesses in Egypt and Saudi Arabia Are Investing in AI Chatbots",
+          "preview": "AI Chatbots for Enterprise: The 2026 Guide | ElectroPi | Why Businesses in Egypt and Saudi Arabia Are Investing in AI Chatbots\nVision 2030 in Saudi Arabia and Egypt's Digital Strategy 2030 are pushing"
+        },
+        {
+          "id": "blog_voice-ai-agent-for-customer-service#1.0",
+          "relevance": 0,
+          "heading": "What Is a Voice AI Agent for Customer Service?",
+          "preview": "Voice AI Agent for Customer Service | ElectroPi | What Is a Voice AI Agent for Customer Service?\nA voice AI agent for customer service is an autonomous conversational system that answers phone calls, "
+        },
+        {
+          "id": "blog_ai-chatbots-for-enterprise#8.0",
+          "relevance": 0,
+          "heading": "Key Features",
+          "preview": "AI Chatbots for Enterprise: The 2026 Guide | ElectroPi | Key Features\nMultilingual (Arabic + English): dialects and code-switching.\nOmnichannel: web, mobile, WhatsApp Business, Messenger, voice.\nRAG o"
+        },
+        {
+          "id": "contact#0.0",
+          "relevance": 0,
+          "heading": "Let's Build Something Extraordinary",
+          "preview": "Contact ElectroPi | AI Engineering Experts | Let's Build Something Extraordinary\nReady to transform your business with AI? We'd love to hear from you.\nPrefer to schedule a call? Book a free 30-minute "
+        },
+        {
+          "id": "blog_ai-chatbots-for-enterprise#1.0",
+          "relevance": 0,
+          "heading": "What Are Enterprise AI Chatbots?",
+          "preview": "AI Chatbots for Enterprise: The 2026 Guide | ElectroPi | What Are Enterprise AI Chatbots?\nAn enterprise AI chatbot is a production-grade conversational agent that uses natural language processing, lar"
+        },
+        {
+          "id": "blog_ai-chatbots-for-enterprise#9.0",
+          "relevance": 0,
+          "heading": "Business Benefits",
+          "preview": "AI Chatbots for Enterprise: The 2026 Guide | ElectroPi | Business Benefits\nUp to 70% ticket deflection on repetitive queries.\n24/7 availability across time zones and holidays.\n30–50% lower cost per co"
+        },
+        {
+          "id": "blog_ai-chatbots-for-enterprise#17.0",
+          "relevance": 0,
+          "heading": "Case Study: Regional E-Commerce Retailer — Lessons Learned",
+          "preview": "AI Chatbots for Enterprise: The 2026 Guide | ElectroPi | Case Study: Regional E-Commerce Retailer — Lessons Learned\nGuardrails, evaluation sets, and Arabic dialect coverage separated demo from product"
+        },
+        {
+          "id": "blog_ai-chatbots-for-enterprise#18.0",
+          "relevance": 0,
+          "heading": "Implementation Roadmap",
+          "preview": "AI Chatbots for Enterprise: The 2026 Guide | ElectroPi | Implementation Roadmap\nDiscovery (Weeks 1–2): map intents, data sources, success metrics.\nDesign (Weeks 2–3): flows, guardrails, evaluation set"
+        }
+      ]
+    },
+    "seconds": 3.06
+  },
+  {
+    "question": "Who is the CEO of ElectroPi?",
+    "answer": "I don't have relevant information about that in the ElectroPi knowledge base.",
+    "citations": [],
+    "refused": true,
+    "cache_mode": "explicit-cache",
+    "cached_tokens": 0,
+    "contexts": [],
+    "cache_hit": false,
+    "diagnostics": {
+      "best_cosine": 0.778,
+      "query_variants": [
+        "Who is the CEO of ElectroPi?",
+        "Who leads ElectroPi as Chief Executive Officer?",
+        "Find the current head or CEO of ElectroPi."
+      ],
+      "rerank": [
+        {
+          "id": "about#1.0",
+          "relevance": 0,
+          "heading": "Built by engineers, for engineers.",
+          "preview": "Our Story & Mission | About ElectroPi | Built by engineers, for engineers.\nElectroPi was founded in 2016 by a team of AI researchers and software engineers who saw the gap between cutting-edge AI rese"
+        },
+        {
+          "id": "outsourcing#1.0",
+          "relevance": 0,
+          "heading": "Qualified talent, ready when you need it",
+          "preview": "Hire Dedicated AI Engineers & Developers | ElectroPi | Qualified talent, ready when you need it\nElectroPi connects businesses with pre-vetted AI engineers and software developers who have proven track"
+        },
+        {
+          "id": "about#11.0",
+          "relevance": 0,
+          "heading": "Ready to build the future together?",
+          "preview": "Our Story & Mission | About ElectroPi | Ready to build the future together?\nLet's discuss how ElectroPi can help transform your business with intelligent AI solutions."
+        },
+        {
+          "id": "about#10.0",
+          "relevance": 0,
+          "heading": "Built by world-class AI engineers",
+          "preview": "Our Story & Mission | About ElectroPi | Built by world-class AI engineers\nOur team brings together PhD researchers, senior software architects, and AI specialists from leading tech companies and resea"
+        },
+        {
+          "id": "solutions#0.0",
+          "relevance": 0,
+          "heading": "Business-Ready AI Solutions",
+          "preview": "Enterprise AI Solutions for Business | ElectroPi | Business-Ready AI Solutions\nProven AI platforms designed to solve real business challenges across industries."
+        },
+        {
+          "id": "about#0.0",
+          "relevance": 0,
+          "heading": "Engineering AI Solutions For the Future",
+          "preview": "Our Story & Mission | About ElectroPi | Engineering AI Solutions For the Future\nFounded on the belief that AI should empower businesses, ElectroPi transforms complex challenges into intelligent, scala"
+        },
+        {
+          "id": "blog_ai-chatbots-for-enterprise#19.0",
+          "relevance": 0,
+          "heading": "Common Mistakes to Avoid",
+          "preview": "AI Chatbots for Enterprise: The 2026 Guide | ElectroPi | Common Mistakes to Avoid\nLaunching without evaluation datasets or hallucination monitoring.\nTreating the project as UI work instead of systems "
+        },
+        {
+          "id": "about#4.0",
+          "relevance": 0,
+          "heading": "What drives us forward — Engineering Excellence",
+          "preview": "Our Story & Mission | About ElectroPi | What drives us forward — Engineering Excellence\nWe build AI systems with precision, reliability, and attention to every technical detail."
+        },
+        {
+          "id": "home#25.0",
+          "relevance": 0,
+          "heading": "Let's Build Intelligent AI Systems Together",
+          "preview": "AI Engineering Services for Enterprise | ElectroPi | Let's Build Intelligent AI Systems Together\nPartner with ElectroPi to create scalable AI solutions and enterprise technologies that drive real busi"
+        },
+        {
+          "id": "about#2.0",
+          "relevance": 0,
+          "heading": "Built by engineers, for engineers. — Our Mission",
+          "preview": "Our Story & Mission | About ElectroPi | Built by engineers, for engineers. — Our Mission\nTo democratize AI technology by making enterprise-grade artificial intelligence accessible, practical, and tran"
+        }
+      ],
+      "gate": "rerank gate (best 0 < 4)"
+    },
+    "seconds": 2.38
+  }
+]

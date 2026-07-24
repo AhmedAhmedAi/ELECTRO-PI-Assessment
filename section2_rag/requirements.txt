@@ -1,0 +1,13 @@
+langchain
+langchain-google-genai
+langchain-chroma
+langchain-text-splitters
+chromadb
+rank_bm25
+requests
+beautifulsoup4
+google-genai
+python-dotenv
+numpy
+pandas
+jupyter

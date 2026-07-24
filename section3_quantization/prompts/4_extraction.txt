@@ -1,0 +1,3 @@
+Extract the order into JSON with keys customer, order_id, items (list of {name, qty}), total_egp. Reply with ONLY the JSON.
+
+"Hi this is Mariam, order BB-2087. I had two beef burgers, one fries and three cokes, it came to 412 Egyptian pounds."

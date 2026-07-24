@@ -1,0 +1,60 @@
+# Concurrent deployment: one llama-server engine (one weight copy, N KV
+# slots, continuous batching) behind the FastAPI gateway.
+#
+#   docker compose up --build          # CPU engine (default profile, tested here)
+#   COMPOSE_PROFILES=gpu LLAMA_URL=http://llama-gpu:8080 \
+#     docker compose up --build        # CUDA engine (GPU hosts with
+#                                      #  nvidia-container-toolkit)
+# The profile swaps the engine only — gateway, API, and clients unchanged.
+services:
+  llama:
+    profiles: ["cpu"]                # default via .env: COMPOSE_PROFILES=cpu
+    build:
+      context: .
+      dockerfile: Dockerfile.llama   # native-optimized build; the official
+                                     # portable arm64 image is ~5x slower
+    command: >
+      -m /models/Qwen3.5-4B-Q4_K_M.gguf
+      -c 16384 -np 4 -b 512 -ub 128 --host 0.0.0.0 --port 8080
+    volumes:
+      - ../section3_quantization/models:/models:ro
+    # 16384 ctx / 4 slots = 4096 per request, same as the local backend.
+
+  llama-gpu:
+    profiles: ["gpu"]
+    build:
+      context: .
+      dockerfile: Dockerfile.llama.cuda
+    command: >
+      -m /models/Qwen3.5-4B-Q4_K_M.gguf
+      -c 16384 -np 8 -ngl 99 --host 0.0.0.0 --port 8080
+    volumes:
+      - ../section3_quantization/models:/models:ro
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    # 8 slots: a GPU has the parallel headroom the CPU VM lacks. Falls
+    # back to CPU automatically if no GPU is visible at runtime.
+
+  api:
+    build: .
+    environment:
+      LLM_BACKEND: server
+      LLAMA_SERVER_URL: ${LLAMA_URL:-http://llama:8080}
+      N_PARALLEL: 4
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    # required: false — the engine is profile-selected (cpu OR gpu), so each
+    # dependency is optional; compose waits only on whichever one is active.
+    depends_on:
+      llama:
+        condition: service_started
+        required: false
+      llama-gpu:
+        condition: service_started
+        required: false

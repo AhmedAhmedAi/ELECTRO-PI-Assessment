@@ -1,0 +1,59 @@
+
+
+Loading model... |-\|/-\|/-\|/-\|/-\|/-\|/-\|/- 
+
+▄▄ ▄▄
+██ ██
+██ ██  ▀▀█▄ ███▄███▄  ▀▀█▄    ▄████ ████▄ ████▄
+██ ██ ▄█▀██ ██ ██ ██ ▄█▀██    ██    ██ ██ ██ ██
+██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀
+                                    ██    ██
+                                    ▀▀    ▀▀
+
+build      : b10050-b15ca938a
+model      : models/Qwen3.5-4B-Q4_K_M.gguf
+ftype      : Q4_K - Medium
+modalities : text
+
+available commands:
+  /exit or Ctrl+C     stop or exit
+  /regen              regenerate the last response
+  /clear              clear the chat history
+  /read <file>        add a text file
+  /glob <pattern>     add text files using globbing pattern
+
+
+
+> A restaurant sells burgers for 85 EGP each. On Tuesday it sold 47 burgers, and on Wednesday it sold 12 fewer than on Tuesday. It also pays a fixed 900 EGP per day in rider costs. What was the total profit contribution (revenue minus rider costs) across both days? Show your steps briefly, then give the final number.
+Here is the step-by-step calculation to find the total profit contribution:
+
+**Step 1: Calculate the number of burgers sold on Wednesday.**
+*   Tuesday sales: 47 burgers
+*   Wednesday sales: 12 fewer than Tuesday
+*   Wednesday sales = $47 - 12 = 35$ burgers
+
+**Step 2: Calculate the total number of burgers sold across both days.**
+*   Total burgers = Tuesday sales + Wednesday sales
+*   Total burgers = $47 + 35 = 82$ burgers
+
+**Step 3: Calculate the total revenue.**
+*   Price per burger: 85 EGP
+*   Total Revenue = Total burgers $\times$ Price per burger
+*   Total Revenue = $82 \times 85 = 6,970$ EGP
+
+**Step 4: Calculate the total rider costs.**
+*   Daily rider cost: 900 EGP
+*   Number of days: 2 (Tuesday and Wednesday)
+*   Total Rider Costs = $900 \times 2 = 1,800$ EGP
+
+**Step 5: Calculate the total profit contribution.**
+*   Profit = Total Revenue - Total Rider Costs
+*   Profit = $6,970 - 1,800 = 5,170$ EGP
+
+**Final Answer:**
+5170
+
+[ Prompt: 510.9 t/s | Generation: 37.6 t/s ]
+
+
+Exiting...

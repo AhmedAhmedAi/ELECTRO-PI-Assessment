@@ -1,0 +1,6 @@
+CPU_Mapped model buffer size = 497.31 MiB
+MTL0_Mapped model buffer size = 2572.86 MiB
+MTL0 KV buffer size = 256.0 MiB
+MTL0 RS buffer size = 50.25 MiB
+MTL0 compute buffer size = 88.11 MiB
+CPU compute buffer size = 18.02 MiB

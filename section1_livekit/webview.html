@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sara — live session</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; margin: 0; }
+  body { font: 15px/1.55 -apple-system, "Segoe UI", sans-serif; background: #0e1116;
+         color: #dde3ea; min-height: 100vh; display: flex; flex-direction: column;
+         align-items: center; padding: 28px 16px; gap: 18px; }
+  h1 { font-size: 15px; font-weight: 600; color: #8b95a3; }
+
+  /* The orb: one glance = who holds the floor */
+  #orb { width: 96px; height: 96px; border-radius: 50%; transition: all .25s;
+         background: #2a3140; }
+  #orb.listening { background: #1d4ed8; }
+  #orb.userspeaking { background: #16a34a; animation: pulse 1s infinite; }
+  #orb.thinking { background: #d97706; animation: pulse 1.4s infinite; }
+  #orb.speaking { background: #7c3aed; animation: pulse .8s infinite; }
+  @keyframes pulse { 50% { box-shadow: 0 0 0 16px rgba(255,255,255,.06); } }
+  #state { font-size: 13px; color: #8b95a3; min-height: 1.2em; }
+
+  /* mic gate: the page opens muted so a recording can be framed first */
+  #mute { border: 0; cursor: pointer; border-radius: 999px; padding: 9px 18px;
+          font: 600 13px -apple-system, "Segoe UI", sans-serif; transition: all .15s; }
+  #mute.muted { background: #7f1d1d; color: #fecaca; }
+  #mute.live  { background: #14532d; color: #bbf7d0; }
+  #mute:active { transform: scale(.97); }
+
+  #feed { width: 100%; max-width: 660px; display: flex; flex-direction: column; gap: 8px; }
+  .msg { padding: 10px 14px; border-radius: 12px; max-width: 85%;
+         white-space: pre-wrap; word-break: break-word; }
+  .user { background: #14331f; align-self: flex-end; }
+  .assistant { background: #272040; align-self: flex-start; }
+
+  /* live tail: words still being recognized / spoken, not yet settled */
+  .live { opacity: .55; font-style: italic; }
+  .live::after { content: "▍"; animation: blink 1s infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* the "you resumed after a pause" seam inside a user bubble */
+  .seam { display: inline-block; margin: 0 6px; padding: 0 8px; border-radius: 999px;
+          background: #d9770633; color: #fbbf24; font-size: 11.5px; font-style: normal; }
+
+  .cutmark { color: #ef4444; font-size: 12px; }
+  .event { align-self: center; font-size: 12.5px; color: #8b95a3;
+           background: #161b23; border-radius: 999px; padding: 3px 12px; }
+  .event.warn { color: #fbbf24; }
+  .event.bad { color: #ef4444; }
+</style>
+</head>
+<body>
+  <h1>Sara — Bolt Bites live session</h1>
+  <div id="orb"></div>
+  <div id="state">connecting…</div>
+  <button id="mute" type="button" hidden></button>
+  <div id="feed"></div>
+
+<script>
+  const orb = document.getElementById("orb");
+  const stateEl = document.getElementById("state");
+  const feed = document.getElementById("feed");
+  const muteBtn = document.getElementById("mute");
+
+  let userSpeaking = false, agentState = "idle";
+  let muted = null;        // unknown until the server says (it owns the state)
+  // Bubble rules, so the feed always reads in SPOKEN order:
+  //  - your bubble stays open (merges + seam) until Sara STARTS SPEAKING;
+  //    from that moment on, anything you say is a new bubble below hers —
+  //    that's what makes a barge-in come out as fresh bubbles.
+  //  - her bubble goes "stale" when a draft is discarded: text that appeared
+  //    but was never delivered. The next real reply REPLACES that text and
+  //    the bubble drops below anything said in between.
+  let userBubble = null;   // {el, liveEl, hadFinal, seamShown}
+  let agentBubble = null;  // {el, textEl, stale}
+
+  function render() {
+    orb.className = userSpeaking ? "userspeaking"
+      : ({listening: "listening", thinking: "thinking", speaking: "speaking"}[agentState] || "");
+    stateEl.textContent = userSpeaking ? "you are speaking"
+      : ({listening: "listening…", thinking: "thinking…", speaking: "Sara is speaking"}[agentState] || agentState);
+  }
+
+  function scroll(el) { el.scrollIntoView({behavior: "smooth", block: "end"}); }
+
+  function chip(text, cls = "") {
+    const el = document.createElement("div");
+    el.className = "event " + cls;
+    el.textContent = text;
+    feed.appendChild(el); scroll(el);
+  }
+
+  // ---- your side: one bubble that grows as you speak ----------------------
+  function ensureUserBubble() {
+    if (userBubble) return userBubble;
+    const el = document.createElement("div");
+    el.className = "msg user";
+    const liveEl = document.createElement("span");
+    liveEl.className = "live";
+    el.appendChild(liveEl);
+    feed.appendChild(el);
+    userBubble = {el, liveEl, hadFinal: false};
+    return userBubble;
+  }
+
+  function userInterim(text) {
+    const b = ensureUserBubble();
+    // Resumed after a settled fragment? Show the seam once for this segment.
+    if (b.hadFinal && !b.seamShown) {
+      const seam = document.createElement("span");
+      seam.className = "seam";
+      seam.textContent = "⏎ continued";
+      b.el.insertBefore(seam, b.liveEl);
+      b.seamShown = true;
+    }
+    b.liveEl.textContent = text;
+    scroll(b.el);
+  }
+
+  function userFinal(text) {
+    const b = ensureUserBubble();
+    const settled = document.createElement("span");
+    settled.textContent = (b.hadFinal ? " " : "") + text;
+    b.el.insertBefore(settled, b.liveEl);
+    b.liveEl.textContent = "";
+    b.hadFinal = true;
+    b.seamShown = false;
+    scroll(b.el);
+  }
+
+  function closeUserBubble() {
+    if (!userBubble) return;
+    userBubble.liveEl.remove();
+    // A false start that never settled any words leaves nothing worth keeping.
+    if (userBubble.el.textContent.trim() === "") userBubble.el.remove();
+    userBubble = null;
+  }
+
+  // ---- her side: text types in sync with her voice ------------------------
+  function ensureAgentBubble() {
+    if (agentBubble) {
+      if (agentBubble.stale) {
+        // Shown but never delivered (discarded draft / filler line): the new
+        // reply replaces the text, and the bubble moves to the end of the
+        // feed so it lands BELOW whatever you said in the meantime.
+        agentBubble.textEl.textContent = "";
+        agentBubble.textEl.className = "live";
+        agentBubble.stale = false;
+        feed.appendChild(agentBubble.el);
+        closeUserBubble();
+      }
+      return agentBubble;
+    }
+    closeUserBubble();  // she's speaking now: your next words = a new bubble
+    const el = document.createElement("div");
+    el.className = "msg assistant";
+    const textEl = document.createElement("span");
+    textEl.className = "live";
+    el.appendChild(textEl);
+    feed.appendChild(el);
+    agentBubble = {el, textEl, stale: false};
+    return agentBubble;
+  }
+
+  function agentDelta(text) {
+    const b = ensureAgentBubble();
+    b.textEl.textContent += text;
+    scroll(b.el);
+  }
+
+  function agentDone(finalText, interrupted) {
+    const b = ensureAgentBubble();
+    b.textEl.className = "";
+    if (finalText) b.textEl.textContent = finalText;
+    if (interrupted) {
+      const cut = document.createElement("div");
+      cut.className = "cutmark";
+      cut.textContent = "✂ interrupted here — the rest was never spoken";
+      b.el.appendChild(cut);
+    }
+    agentBubble = null;  // her next reply always starts a fresh bubble
+  }
+
+  // ---- mic gate ------------------------------------------------------------
+  function renderMute() {
+    muteBtn.hidden = muted === null;
+    muteBtn.className = muted ? "muted" : "live";
+    muteBtn.textContent = muted ? "🔇 mic muted — click to talk"
+                                : "🎙 mic live — click to mute";
+  }
+
+  muteBtn.onclick = () => {
+    if (ws.readyState === WebSocket.OPEN && muted !== null)
+      ws.send(JSON.stringify({t: "set_muted", muted: !muted}));
+  };
+
+  const ws = new WebSocket(`ws://${location.host}/ws`);
+  ws.onopen = () => { stateEl.textContent = "connected"; };
+  ws.onclose = () => { stateEl.textContent = "disconnected (is the agent running?)"; orb.className = ""; };
+  ws.onmessage = (e) => {
+    const ev = JSON.parse(e.data);
+    switch (ev.t) {
+      case "user_state": userSpeaking = ev.state === "speaking"; render(); break;
+      case "agent_state":
+        // Her starting to speak is the seam between turns: it seals your
+        // bubble, so a barge-in never merges into the words she answered.
+        if (ev.state === "speaking" && agentState !== "speaking") closeUserBubble();
+        agentState = ev.state; render(); break;
+
+      case "interim": userInterim(ev.text); break;
+      case "heard":   userFinal(ev.text); break;
+
+      case "agent_delta": agentDelta(ev.text); break;
+      case "agent_flush": break; // segment boundary; bubble closes on "msg"
+      case "msg":
+        if (ev.role === "assistant") agentDone(ev.text, ev.interrupted);
+        break;
+
+      case "muted": {
+        const was = muted;
+        muted = ev.muted; renderMute();
+        if (was !== null && was !== muted) chip(muted ? "mic muted" : "mic live");
+        break;
+      }
+
+      case "discarded":
+        if (agentBubble) agentBubble.stale = true;  // next reply replaces it
+        chip("draft discarded — you kept talking; re-deciding with your full sentence", "warn"); break;
+      case "overlap":
+        chip(ev.interruption ? "barge-in — Sara stops to listen" : "overlap ignored (backchannel)",
+             ev.interruption ? "bad" : ""); break;
+      case "false_interruption":
+        chip(ev.resumed ? "false alarm — resuming reply" : "false alarm — reply not resumed", "warn"); break;
+      case "tools":
+        chip("tool: " + ev.names.join(", ")); break;
+    }
+  };
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+
+
+Loading model... |-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\ 
+
+▄▄ ▄▄
+██ ██
+██ ██  ▀▀█▄ ███▄███▄  ▀▀█▄    ▄████ ████▄ ████▄
+██ ██ ▄█▀██ ██ ██ ██ ▄█▀██    ██    ██ ██ ██ ██
+██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀
+                                    ██    ██
+                                    ▀▀    ▀▀
+
+build      : b10050-b15ca938a
+model      : models/Qwen3.5-4B-BF16.gguf
+ftype      : BF16
+modalities : text
+
+available commands:
+  /exit or Ctrl+C     stop or exit
+  /regen              regenerate the last response
+  /clear              clear the chat history
+  /read <file>        add a text file
+  /glob <pattern>     add text files using globbing pattern
+
+
+
+> Why does the Earth have seasons? Answer in exactly 3 sentences.
+The Earth has seasons because its axis is tilted at an angle of approximately 23.5 degrees relative to its orbital plane. As the Earth orbits the Sun, this tilt causes different hemispheres to receive varying amounts of direct sunlight throughout the year. When a hemisphere is tilted toward the Sun, it experiences summer with longer days and more intense heat, while the opposite hemisphere experiences winter.
+
+[ Prompt: 120.9 t/s | Generation: 14.6 t/s ]
+
+
+Exiting...

@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+results/
+server.log
+*.md
+.gitignore

@@ -1,0 +1,33 @@
+
+
+Loading model... |-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\| 
+
+▄▄ ▄▄
+██ ██
+██ ██  ▀▀█▄ ███▄███▄  ▀▀█▄    ▄████ ████▄ ████▄
+██ ██ ▄█▀██ ██ ██ ██ ▄█▀██    ██    ██ ██ ██ ██
+██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀
+                                    ██    ██
+                                    ▀▀    ▀▀
+
+build      : b10050-b15ca938a
+model      : models/Qwen3.5-4B-BF16.gguf
+ftype      : BF16
+modalities : text
+
+available commands:
+  /exit or Ctrl+C     stop or exit
+  /regen              regenerate the last response
+  /clear              clear the chat history
+  /read <file>        add a text file
+  /glob <pattern>     add text files using globbing pattern
+
+
+
+> اكتب رد قصير (٣ جمل بالظبط) باللهجة المصرية لعميل زعلان لأن أوردر الأكل بتاعه اتأخر ٤٥ دقيقة، واعرض عليه خصم ١٠٪ على الطلب الجاي.
+يا بطل، عذراً جزيلاً عن التأخير ده اللي حصل بسببه، نعمل على تسوية الأمر فوراً. عشان نكفأ عنك، خصمنا عليك ١٠٪ على الطلب الجاي.
+
+[ Prompt: 305.9 t/s | Generation: 14.0 t/s ]
+
+
+Exiting...

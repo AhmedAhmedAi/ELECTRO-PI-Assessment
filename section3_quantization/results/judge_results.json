@@ -1,0 +1,175 @@
+{
+  "judge_model": "gemini-3.5-flash",
+  "results": [
+    {
+      "prompt": "1_factual.txt",
+      "blinding": {
+        "A": "Qwen3.5-4B-BF16",
+        "B": "Qwen3.5-4B-Q4_K_M"
+      },
+      "scores": {
+        "Qwen3.5-4B-BF16": {
+          "instruction_following": 5,
+          "truthfulness": 5,
+          "conciseness": 5,
+          "writing_style": 5,
+          "helpfulness": 5
+        },
+        "Qwen3.5-4B-Q4_K_M": {
+          "instruction_following": 5,
+          "truthfulness": 5,
+          "conciseness": 5,
+          "writing_style": 5,
+          "helpfulness": 5
+        }
+      },
+      "issues": {
+        "instruction_following": "none",
+        "truthfulness": "none",
+        "conciseness": "none",
+        "writing_style": "none",
+        "helpfulness": "none"
+      },
+      "verdict_raw": "tie",
+      "winner": "tie",
+      "margin": "tie",
+      "why": "Both answers followed the negative constraint of writing exactly three sentences, and both provided highly accurate, clear, and virtually identical explanations of why the Earth has seasons."
+    },
+    {
+      "prompt": "2_math.txt",
+      "blinding": {
+        "A": "Qwen3.5-4B-BF16",
+        "B": "Qwen3.5-4B-Q4_K_M"
+      },
+      "scores": {
+        "Qwen3.5-4B-BF16": {
+          "instruction_following": 5,
+          "truthfulness": 5,
+          "conciseness": 5,
+          "writing_style": 5,
+          "helpfulness": 5
+        },
+        "Qwen3.5-4B-Q4_K_M": {
+          "instruction_following": 5,
+          "truthfulness": 5,
+          "conciseness": 5,
+          "writing_style": 5,
+          "helpfulness": 5
+        }
+      },
+      "issues": {
+        "instruction_following": "none",
+        "truthfulness": "none",
+        "conciseness": "none",
+        "writing_style": "none",
+        "helpfulness": "none"
+      },
+      "verdict_raw": "tie",
+      "winner": "tie",
+      "margin": "tie",
+      "why": "Both models followed all instructions perfectly, showed the correct mathematical steps, and arrived at the correct final answer."
+    },
+    {
+      "prompt": "3_code.txt",
+      "blinding": {
+        "A": "Qwen3.5-4B-Q4_K_M",
+        "B": "Qwen3.5-4B-BF16"
+      },
+      "scores": {
+        "Qwen3.5-4B-Q4_K_M": {
+          "instruction_following": 2,
+          "truthfulness": 2,
+          "conciseness": 5,
+          "writing_style": 4,
+          "helpfulness": 2
+        },
+        "Qwen3.5-4B-BF16": {
+          "instruction_following": 2,
+          "truthfulness": 2,
+          "conciseness": 5,
+          "writing_style": 4,
+          "helpfulness": 2
+        }
+      },
+      "issues": {
+        "instruction_following": "Both models failed to include the doctests inside the function's docstring. Instead, they placed them as raw code under an `if __name__ == \"__main__\":` block, which is not how doctests work.",
+        "truthfulness": "Both models produced code that contains a SyntaxError. In Python, `>>>` is not valid syntax outside of a string/comment, so running either script will result in a `SyntaxError: invalid syntax`.",
+        "conciseness": "none",
+        "writing_style": "Both wrote clean code, but the syntax error ruins the execution.",
+        "helpfulness": "The code cannot be run as-is due to the syntax error caused by the incorrectly placed doctests."
+      },
+      "verdict_raw": "tie",
+      "winner": "tie",
+      "margin": "tie",
+      "why": "Both models implemented the correct merging algorithm, but both made the exact same critical error: they placed the doctests outside of the docstring as raw Python code, which results in a SyntaxError due to the `>>>` symbols."
+    },
+    {
+      "prompt": "4_extraction.txt",
+      "blinding": {
+        "A": "Qwen3.5-4B-BF16",
+        "B": "Qwen3.5-4B-Q4_K_M"
+      },
+      "scores": {
+        "Qwen3.5-4B-BF16": {
+          "instruction_following": 3,
+          "truthfulness": 5,
+          "conciseness": 4,
+          "writing_style": 5,
+          "helpfulness": 4
+        },
+        "Qwen3.5-4B-Q4_K_M": {
+          "instruction_following": 3,
+          "truthfulness": 5,
+          "conciseness": 4,
+          "writing_style": 5,
+          "helpfulness": 4
+        }
+      },
+      "issues": {
+        "instruction_following": "Both models failed the negative constraint to reply with ONLY the JSON, as both included the original input text at the beginning of their responses.",
+        "truthfulness": "none",
+        "conciseness": "Both models included unnecessary repetition of the input text.",
+        "writing_style": "none",
+        "helpfulness": "Both models included extra text which makes parsing the JSON directly more difficult."
+      },
+      "verdict_raw": "tie",
+      "winner": "tie",
+      "margin": "tie",
+      "why": "Both models extracted the information perfectly into the requested JSON format, but both failed the negative constraint to output ONLY the JSON by repeating the input text at the start of their responses."
+    },
+    {
+      "prompt": "5_arabic.txt",
+      "blinding": {
+        "A": "Qwen3.5-4B-BF16",
+        "B": "Qwen3.5-4B-Q4_K_M"
+      },
+      "scores": {
+        "Qwen3.5-4B-BF16": {
+          "instruction_following": 4,
+          "truthfulness": 5,
+          "conciseness": 5,
+          "writing_style": 3,
+          "helpfulness": 4
+        },
+        "Qwen3.5-4B-Q4_K_M": {
+          "instruction_following": 5,
+          "truthfulness": 3,
+          "conciseness": 4,
+          "writing_style": 1,
+          "helpfulness": 2
+        }
+      },
+      "issues": {
+        "instruction_following": "Answer A wrote 2 sentences instead of exactly 3. Answer B followed the length constraint perfectly.",
+        "truthfulness": "Answer B contains nonsensical/gibberish phrases (\"بيومينك ده حقك ولا نزلنا عندها\", \"نكفك\") that do not make sense in any Arabic dialect.",
+        "conciseness": "none",
+        "writing_style": "Answer A is a mix of Modern Standard Arabic and Gulf phrasing (\"خصمنا عليك\"), with weak Egyptian. Answer B is extremely poor, containing hallucinated/gibberish words that make no sense in Egyptian Arabic.",
+        "helpfulness": "Answer B is unusable for customer service due to the broken language and gibberish words, whereas Answer A is understandable despite its flaws."
+      },
+      "verdict_raw": "A_better",
+      "winner": "Qwen3.5-4B-BF16",
+      "margin": "better",
+      "why": "While Answer B followed the sentence count constraint perfectly, its Arabic is broken and contains nonsensical, hallucinated words. Answer A, despite failing the sentence count constraint (writing 2 sentences instead of 3), is coherent and usable."
+    }
+  ]
+}

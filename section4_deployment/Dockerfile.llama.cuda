@@ -1,0 +1,35 @@
+# llama-server with CUDA — for Linux hosts with an NVIDIA GPU.
+# Needs nvidia-container-toolkit on the host; run via the compose "gpu"
+# profile (or: docker run --gpus all ...). If no GPU is visible at
+# runtime, llama.cpp's CUDA build falls back to CPU instead of crashing.
+#
+# HONESTY NOTE: authored on Apple Silicon where CUDA cannot run. The cmake
+# configure stage WAS smoke-tested in this exact base image (arch set below
+# verified); the compile and GPU execution have not — no NVIDIA hardware
+# here. The CPU variant (Dockerfile.llama) is fully load-tested.
+FROM nvidia/cuda:12.4.1-devel-ubuntu22.04 AS build
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential cmake git ca-certificates libcurl4-openssl-dev \
+    && rm -rf /var/lib/apt/lists/*
+# Pinned release (moves ~daily on master; pin = reproducible builds).
+RUN git clone --depth 1 --branch b10087 https://github.com/ggml-org/llama.cpp /src
+# GGML_NATIVE=OFF pins the portable CUDA arch set — verified by configure:
+# 50/61/70/75/80-virtual + 86/89-real + 90-virtual on CUDA 12.4 (newer GPUs
+# run the 90 PTX via JIT). Without it, arch choice depends on the build env:
+# cmake >= 3.24 flips to "native" — GPUs visible at *build* time, and
+# `docker build` sees none even on GPU hosts. This base image's cmake 3.22
+# dodges that only by accident; OFF makes it deterministic and also drops
+# -mcpu=native from the CPU fallback path.
+# -j 4: nvcc jobs are memory-hungry; unbounded -j can OOM smaller hosts.
+RUN cmake -S /src -B /build -DCMAKE_BUILD_TYPE=Release \
+        -DGGML_CUDA=ON -DGGML_NATIVE=OFF -DBUILD_SHARED_LIBS=OFF -DLLAMA_CURL=ON \
+    && cmake --build /build --target llama-server -j 4
+
+FROM nvidia/cuda:12.4.1-runtime-ubuntu22.04
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libcurl4 libgomp1 && rm -rf /var/lib/apt/lists/* \
+    && useradd --create-home appuser
+COPY --from=build /build/bin/llama-server /usr/local/bin/llama-server
+USER appuser
+EXPOSE 8080
+ENTRYPOINT ["llama-server"]

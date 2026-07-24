@@ -1,0 +1,34 @@
+[
+  {
+    "faithfulness": 5,
+    "answer_relevance": 5,
+    "context_precision": 5,
+    "unsupported_claims": [],
+    "comment": "The answer is fully faithful to the sources, directly answering the question with precise information retrieved from the provided context. All sources retrieved are highly relevant to the query."
+  },
+  {
+    "faithfulness": 5,
+    "answer_relevance": 5,
+    "context_precision": 4,
+    "unsupported_claims": [],
+    "comment": "The system's answer is highly faithful to the provided sources, directly addressing the question with accurate details. Every point in the answer is supported by Sources 1 and 2. Context precision is rated 4 because while Sources 1 and 2 were highly relevant and sufficient to answer the question, Sources 3 and 4 were more general and not strictly necessary for explaining why Arabic voice AI is uniquely difficult."
+  },
+  {
+    "faithfulness": 5,
+    "answer_relevance": 5,
+    "context_precision": 5,
+    "unsupported_claims": [],
+    "comment": "The system's answer is highly accurate and directly supported by the provided sources. It perfectly answers the question using the exact metrics from the case study results. All retrieved sources were highly relevant to the case study."
+  },
+  {
+    "faithfulness": 5,
+    "answer_relevance": 5,
+    "context_precision": 4,
+    "unsupported_claims": [],
+    "comment": "The system's answer is fully faithful to the provided sources, directly quoting the cost range from Source [1]. The answer is highly relevant to the user's question. Context precision is rated 4 because while Source [1] was essential, Sources [2] and [3] were not needed to answer this specific question."
+  },
+  {
+    "refusal_correct": true,
+    "comment": "The provided passages do not contain any information about the CEO of ElectroPi, so refusing to answer was correct to avoid hallucination."
+  }
+]

@@ -1,0 +1,4 @@
+models/*.gguf
+models/download.log
+.venv/
+__pycache__/

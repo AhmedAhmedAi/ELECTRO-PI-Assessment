@@ -1,0 +1,19 @@
+.venv/
+__pycache__/
+.env
+# section4's .env only selects the compose profile (no secrets) — must ship,
+# or `docker compose up` starts no engine service at all:
+!section4_deployment/.env
+*.pyc
+session.log
+
+# submission packaging
+# multi-GB models — README says how to rebuild/download them:
+*.gguf
+.DS_Store
+# local tooling config, not part of the submission:
+.claude/
+# Chroma + caches — rebuilt by the ingest cell:
+section2_rag/index/
+# the company's own doc (contains the internal scoring guide):
+Electro_Pi_AI_Engineer_Technical_Test.pdf

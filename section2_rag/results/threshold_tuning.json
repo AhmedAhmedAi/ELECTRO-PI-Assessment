@@ -1,0 +1,68 @@
+{
+  "rows": [
+    {
+      "question": "What services does ElectroPi offer?",
+      "label": "on-topic",
+      "best_cosine": 0.788
+    },
+    {
+      "question": "Tell me about ElectroPi's OCR work",
+      "label": "on-topic",
+      "best_cosine": 0.819
+    },
+    {
+      "question": "Does ElectroPi build custom machine learning models?",
+      "label": "on-topic",
+      "best_cosine": 0.854
+    },
+    {
+      "question": "What is ElectroPi's mission?",
+      "label": "on-topic",
+      "best_cosine": 0.838
+    },
+    {
+      "question": "How do AI chatbots help enterprises?",
+      "label": "on-topic",
+      "best_cosine": 0.857
+    },
+    {
+      "question": "What did the manufacturing case study deliver?",
+      "label": "on-topic",
+      "best_cosine": 0.725
+    },
+    {
+      "question": "What is the capital of France?",
+      "label": "off-topic",
+      "best_cosine": 0.549
+    },
+    {
+      "question": "How do I cook pasta carbonara?",
+      "label": "off-topic",
+      "best_cosine": 0.533
+    },
+    {
+      "question": "Who won the 2022 World Cup?",
+      "label": "off-topic",
+      "best_cosine": 0.553
+    },
+    {
+      "question": "How does a transformer neural network work mathematically?",
+      "label": "off-topic",
+      "best_cosine": 0.626
+    },
+    {
+      "question": "What is the best GPU for training LLMs?",
+      "label": "off-topic",
+      "best_cosine": 0.651
+    },
+    {
+      "question": "What's the weather in Cairo today?",
+      "label": "off-topic",
+      "best_cosine": 0.564
+    }
+  ],
+  "on_topic_min": 0.725,
+  "off_topic_max": 0.651,
+  "dense_gate": 0.68,
+  "rerank_gate": 4
+}

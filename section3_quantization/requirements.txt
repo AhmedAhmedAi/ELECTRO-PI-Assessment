@@ -1,0 +1,5 @@
+# For analysis.ipynb re-execution and judge.py. The measurement pipeline
+# itself is pure shell + llama.cpp (brew install llama.cpp).
+pandas
+jupyter
+certifi
